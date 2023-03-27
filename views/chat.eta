@@ -1,0 +1,21 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1>Chat room</h1>
+
+<h2>Send your message here</h2>
+
+<div class="form-group">
+<form method="POST" action="/">
+  Sender: <input class="form-group" type="text" name="sender" /> <br>
+  Message: <input class="form-group" type="text" name="message" /> <br>
+  <input type="submit" value="Send message" class="btn btn-primary" />
+</form>
+</div>
+
+<h2>Recent messages</h2>
+  <% it.messages.forEach((item) => { %>
+    <p>
+      <%= item.sender %>: <%= item.message%>
+    </p>
+  <% });%>
+
